@@ -8,4 +8,33 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def new
+    @article = Article.new
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def create
+    @article = Article.new(params.require(:article).permit(:title, :description))
+    if @article.save
+      flash[:notice] = "Article was created successfully."
+      redirect_to @article
+    else
+      # status: :unprocessable_entity found in https://gorails.com/forum/rails-for-beginners-part-14-handling-sign-up-errors-discussion to fix "form responses must redirect to another location" 
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(params.require(:article).permit(:title, :description))
+      flash[:notice] = "Article was updated succesfully."
+      redirect_to @article
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
 end
