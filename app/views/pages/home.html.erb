@@ -1,4 +1,25 @@
-<p>Welcomo to home page</p>
+<style>
+  #home-container {
+    margin-top: 25px;
+  }
 
-<%= link_to 'Articles listing', articles_path %> |
-<%= link_to 'About page', about_path %>
+  # .container-fluid {
+  #   background-image: url("jumbo.jpg");
+  # }
+</style>
+
+<div class="container" id="home-container">
+  <div class="container-fluid text-center bg-light p-5">
+    <h1 class="display-4">Jumbotron</h1>
+    <p class="lead">This is  a jumbotron created using the bootstrap 5</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-success btn-lg" href="#" role="button">Sign up</a>
+  </div>
+</div>
+
+<footer class="footer mt-auto text-center py-3 bg-dark">
+  <div class="container">
+    <span class="text-light">Place sticky footer content here.</span>
+  </div>
+</footer>

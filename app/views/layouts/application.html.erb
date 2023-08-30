@@ -1,16 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
   <head>
     <title>AlphaBlog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <style>
+      .navbar {
+        background: black !important;
+      }
+
+      .navbar a {
+        color: white !important;
+      }
+
+      #logo {
+        float: left;
+        font-size: 1.7em;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        font-weight: bold:
+
+      }
+
+      
+    </style>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="d-flex flex-column h-100">
+    <%= render 'layouts/navigation' %>
     <%= render 'layouts/messages' %>
     <%= yield %>
   </body>
