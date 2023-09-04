@@ -25,6 +25,10 @@
 
       }
 
+      .gray-bg {
+        background: lightgray;
+        
+      }
       
     </style>
 
@@ -34,7 +38,10 @@
 
   <body class="d-flex flex-column h-100">
     <%= render 'layouts/navigation' %>
-    <%= render 'layouts/messages' %>
-    <%= yield %>
+    <div class="gray-bg">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
